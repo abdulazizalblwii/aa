@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titleB %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    {% block headB %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <section class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg fixed-top py-3 bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{% url 'home' %}">Cs 392 Project</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav  mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'FQA' %}">FQA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'CoursesList' %}">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chat Room</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Quizes</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">|&nbsp;&nbsp;log out</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'login' %}">|&nbsp;&nbsp;Log in</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'register' %}">Register &nbsp;&nbsp;|</a>
+                                </li>
+                            {% endif %}
+
+
+                            <form class="d-flex" role="search">
+                                <div style="margin-left: 20px; margin-right: 8px;">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                </div>
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!-- End Navbar -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block contentB %}
+    
+    {% endblock %}
+    {% load static %}
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2024 (CS-392) By Student Group Project </p>
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'logout' %}">log out</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'register' %}">Get Started (Click here to Register)</a>
+            {% endif %}
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>

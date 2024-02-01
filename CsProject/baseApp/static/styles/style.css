@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    width: 100%;
+    background-image: linear-gradient(to left, #81A194,#60786E );
+
+}
+
+.navbar-brand{color: #C6F7E4!important;}
+.nav-link{color: #0d7c50!important;}
+.nav-link:hover{color: #3F4F49!important;}
+@media(max-width:668px){
+    .nav-link{text-align: center;}
+}
+
+.navbar{
+    background: linear-gradient(to left ,#C6F7E4, #81A194 );
+}
+
+body::before{
+    display: block;
+    content: '';
+    height: 60px;
+}

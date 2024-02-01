@@ -1,0 +1,89 @@
+{% extends 'main.html' %}
+{% block titleB %}Home{% endblock %}
+
+{% block headB %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block contentB %}
+<section class="bg-dark text-light p-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1>Go ahead and start with a <span class="text-warning">course below</span></h1>
+                <p class="lead my-4">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita eaque aut quos nam tenetur
+                    corrupti
+                    eum aliquid facilis enim iste? Error voluptatibus explicabo blanditiis at, mollitia vitae maxime.
+                    Porro,
+                    ab.
+                </p>
+                <button class="btn btn-primary btn-lg">Start Now</button>
+            </div>
+            <img class="img-fluid w-50 d-none d-sm-block" src="../static/images/HomePageImage.svg" alt="">
+        </div>
+    </div>
+</section>
+
+<!-- L section -->
+<section class="p-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-filetype-java"></i>
+                        </div>
+                        <h3 class="card-title mb-3">
+                            Java Course
+                        </h3>
+                        <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, officiis.
+                        </p>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-filetype-html"></i>
+                        </div>
+                        <h3 class="card-title mb-3">
+                            HTML Course
+                        </h3>
+                        <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, officiis.
+                        </p>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-filetype-py"></i>
+                        </div>
+                        <h3 class="card-title mb-3">
+                            Python Course
+                        </h3>
+                        <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, officiis.
+                        </p>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

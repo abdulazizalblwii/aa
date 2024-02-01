@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% block titleB %}Register page{% endblock %}
+{% block contentB %}
+<!-- Register Form -->
+<section class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-5">
+      <div class="card shadow-lg border-0 rounded-lg mt-5">
+        <div class="card-header"><h3 class="text-center font-weight-light my-4">Register</h3></div>
+        <div class="card-body">
+          <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br><br>
+            <button class="btn btn-secondary">Register</button>
+
+            <!--<div class="form-floating mb-3">
+              <input class="form-control" type="text" name="username" placeholder="Enter your Usernaem" />
+              <label for="inputLastName">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input class="form-control" name="password" type="password" placeholder="Enter your password" />
+              <label for="inputPassword">Password</label>
+            </div>
+            <div class="mt-4 mb-0">
+              <div class="d-grid"><button type="submit" class="btn btn-secondary">Login</button></div>
+            </div>
+            <div class="mt-4 mb-0">
+              <div class="d-grid"><a class="btn btn-secondary btn-block" href="#">(don't have account ?!)    Register now</a></div>
+            </div>-->
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Register Form -->
+<br><br><br>
+{% endblock %}
